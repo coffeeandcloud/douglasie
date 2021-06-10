@@ -10,14 +10,28 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:douglasie.helloWorld"
+    "onCustomEditor:douglasie.parquet",
+    "onCommand:douglasie.openParquet"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "douglasie.helloWorld",
-        "title": "Hello World"
+        "command": "douglasie.openParquet",
+        "title": "Open in Parquet Viewer"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "douglasie.parquet",
+        "displayName": "Douglasie Parquet",
+        "selector": [
+          {
+            "filenamePattern": "*.parquet"
+          }
+        ],
+        "priority": "default",
+        "scripts": "true"
       }
     ]
   },
